@@ -1,4 +1,5 @@
 tmp*
+conf/application.conf
 test-result*
 nbproject*
 precompiled*
