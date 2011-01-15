@@ -1,0 +1,64 @@
+#{extends 'main.html' /}
+#{set title:'dbtest - Home' /}
+
+<div class="grid_12">
+    <h2>Speed Test</h2>
+    #{ifErrors}
+    <div class="error">
+            <ul>
+            #{errors}
+                <li>${error}</li>
+            #{/errors}
+            </ul>
+    </div>
+    #{/ifErrors}
+
+    #{form @Application.speedTest()}
+    <p>
+        <label for="message">Message: </label>
+        <input type="text" name="message" class="text" />
+    </p>
+    <p>
+        <label for="iters">Num of Iterations: </label>
+        <input type="text" name="iters" class="text"/>
+    </p>
+    <p>
+        <input type="submit" value="Speed Test It!" class="button" />
+    </p>
+    #{/form}
+</div>
+<div class="clear"></div>
+<div class="grid_6">
+    <h3>The MongoHQ Messages (${mongoNum} total)</h3>
+    #{if mongoMess.size()}
+    <ul>
+        #{list items:mongoMess, as:'messy'}
+        <li>${messy}</li>
+        #{/list}
+    </ul>
+    #{/if}
+</div>
+
+<div class="grid_6">
+    <h3>The Xeround Messages (${xeNum} total)</h3>
+    #{if xeMess.size()}
+    <ul>
+        #{list items:xeMess, as:'messy'}
+        <li>${messy}</li>
+        #{/list}
+    </ul>
+    #{/if}
+</div>
+<div class="clear"></div>
+<div class="grid_12">
+    <h3>Latest Results</h3>
+    #{if tests.size()}
+    <ul>
+        #{list items:tests, as:'test'}
+        <li>#{a @Application.speedResults(test.id)} ${test} #{/a}</li>
+        #{/list}
+    </ul>
+    #{/if}
+</div>
+<div class="clear"></div>
+

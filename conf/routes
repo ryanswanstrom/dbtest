@@ -1,0 +1,18 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                                       Application.index
+GET     /speedResults/{testRunId}               Application.speedResults
+GET     /robots.txt                             Application.robots
+GET     /about                                  Application.about
+GET     /delete                                 Application.delete
+POST    /speedTest                              Application.speedTest
+POST    /deleteAll                              Application.deleteAll
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                staticDir:public
+
+# Catch all
+# *       /{controller}/{action}                  {controller}.{action}

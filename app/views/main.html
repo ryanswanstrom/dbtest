@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>#{get 'title' /}</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        #{stylesheet 'reset.css' /}
+        #{stylesheet 'text.css' /}
+        #{stylesheet '960.css' /}
+        #{stylesheet 'main.css' /}
+        #{get 'moreStyles' /}
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="keywords" content="database, xeround, mongohq, MySQL, dbtest" />
+        <meta name="description" content="A site to test the insert performance of MongoHQ vs. Xeround." />
+        <link rel="shortcut icon" type="image/png" href="@{'/public/images/img11.gif'}">
+        <!-- script src="@{'/public/javascripts/jquery-1.4.2.min.js'}" type="text/javascript" charset="utf-8"></script -->
+        #{get 'moreScripts' /}
+    </head>
+    <body>
+
+        <div class="container_12">
+            <div class="header grid_1">
+                <h1>#{a @Application.index()}dbtest#{/a}</h1>
+            </div>
+            <div class="header grid_5">
+                <p><a target="_new"  href="http://about.me/ryanswanstrom">By Ryan Swanstrom</a></p>
+            </div>
+
+            <div id="menu" class="header grid_6">
+                <ul>
+                    <li>#{a @Application.index()}Home#{/a}</li>
+                    <li>#{a @Application.about()}About#{/a}</li>
+                    <li><a target="_new"  href="http://mongohq.com">MongoHQ</a></li>
+                    <li><a target="_new"  href="http://xeround.com">Xeround</a></li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+                #{doLayout /}
+            <div class="clear"></div>
+        </div>
+        <div class ="footer">
+            <p class="legal">
+                &copy;2011 <a target="_new" href="http://dbtest.swgoof.com">dbtest.swgoof.com</a> All Rights Reserved.
+                &nbsp;&nbsp;&bull;&nbsp;&nbsp;
+		Design Modified from <a target="_new" href="http://www.freecsstemplates.org/">Free CSS Templates</a>
+            </p>
+            <p class="legal">
+                Site created by <a target="_new" href="http://about.me/ryanswanstrom">Ryan Swanstrom</a>
+                &nbsp;&nbsp;&bull;&nbsp;&nbsp;
+		Follow Ryan on <a target="_new" href="http://www.twitter.com/swgoof">twitter</a>.
+            </p>
+        </div>
+    </body>
+</html>

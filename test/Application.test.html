@@ -1,0 +1,15 @@
+*{ You can use plain selenium command using the selenium tag }*
+
+#{selenium}
+    // Open the home page, and check that no error occured
+    open('/')
+    assertNotTitle('Application error')
+    verifyTextPresent('Total Count')
+#{/selenium}
+
+
+#{selenium}
+    // Open the home page, and check that no error occured
+    open('/application/speedresults')
+    assertNotTitle('Application error')
+#{/selenium}

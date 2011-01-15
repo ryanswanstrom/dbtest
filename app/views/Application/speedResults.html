@@ -1,0 +1,64 @@
+#{extends 'main.html' /}
+#{set title: "dbtest - Speed Results for " + test.inserts + " inserts" /}
+
+<div class="grid_12">
+<h2>Speed Results - ${test.inserts} inserts</h2>
+<p>The results for the test of ${test.inserts} inserts is detailed below.</p>
+</div>
+<div class="clear"></div>
+
+<div class="grid_6">
+<h2>MongoHQ</h2>
+<h4>Average Time: ${test.mongoAvg} inserts/sec </h4>
+</div>
+
+<div class="grid_6">
+<h2>Xeround </h2>
+<h4>Average Time: ${test.xeAvg} inserts/sec </h4>
+</div>
+<div class="clear"></div>
+
+<div class="grid_6 results">
+#{if test.xeAvg < test.mongoAvg}
+    MongoHQ is the winner here.
+    </div>
+    <div class="grid_6">
+#{/if}
+#{else}
+    </div>
+    <div class="grid_6 results">
+    Xeround is the winner here.
+#{/else}    
+</div>
+
+<div class="grid_12">
+<h2>Speed Results - Query</h2>
+<p>The results for the query test are detailed below.</p>
+</div>
+<div class="clear"></div>
+
+<div class="grid_6">
+<h2>MongoHQ </h2>
+<h4>Elapsed Time: ${test.mongoTimeQ} seconds</h4>
+</div>
+
+<div class="grid_6">
+<h2>Xeround </h2>
+<h4>Elapsed Time: ${test.xeTimeQ} seconds </h4>
+</div>
+<div class="clear"></div>
+
+<div class="grid_6 results">
+#{if test.xeTimeQ > test.mongoTimeQ}
+    MongoHQ is the winner here.
+    </div>
+    <div class="grid_6">
+#{/if}
+#{else}
+    </div>
+    <div class="grid_6 results">
+    Xeround is the winner here.
+#{/else}
+</div>
+
+

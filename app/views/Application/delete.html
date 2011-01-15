@@ -1,0 +1,13 @@
+#{extends 'main.html' /}
+#{set title:'dbtest - Delete All' /}
+
+<div class="grid_12">
+
+    <h2>Delete</h2>
+    <p>This page is for deleting all data. </p>
+    #{form @Application.deleteAll()}
+    <p>
+        <input type="submit" value="Delete All" class="button" />
+    </p>
+    #{/form}
+</div>
