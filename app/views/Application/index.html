@@ -2,6 +2,11 @@
 #{set title:'dbtest - Home' /}
 
 <div class="grid_12">
+    <p>
+        Enter a message and a number to test the performance of
+        <a target="_new" href="http://xeround.com">Xeround</a> vs.
+        <a target="_new" href="http://mongohq.com">MongoHQ</a>.
+    </p>
     <h2>Speed Test</h2>
     #{ifErrors}
     <div class="error">
@@ -28,6 +33,17 @@
     #{/form}
 </div>
 <div class="clear"></div>
+<div class="grid_12">
+    <h3>Latest Results</h3>
+    #{if tests.size()}
+    <ul>
+        #{list items:tests, as:'test'}
+        <li>#{a @Application.speedResults(test.id)} ${test} #{/a}</li>
+        #{/list}
+    </ul>
+    #{/if}
+</div>
+<div class="clear"></div>
 <div class="grid_6">
     <h3>The MongoHQ Messages (${mongoNum} total)</h3>
     #{if mongoMess.size()}
@@ -45,17 +61,6 @@
     <ul>
         #{list items:xeMess, as:'messy'}
         <li>${messy}</li>
-        #{/list}
-    </ul>
-    #{/if}
-</div>
-<div class="clear"></div>
-<div class="grid_12">
-    <h3>Latest Results</h3>
-    #{if tests.size()}
-    <ul>
-        #{list items:tests, as:'test'}
-        <li>#{a @Application.speedResults(test.id)} ${test} #{/a}</li>
         #{/list}
     </ul>
     #{/if}

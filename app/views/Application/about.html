@@ -5,23 +5,41 @@
     <h2>About dbtest</h2>
     <p>
         dbtest is speed comparison test between MongoDB hosted at MongoHQ and
-        Xeround's MySQL-like cloud-hosted database.  The speed comparison only
-        does inserts.
+        Xeround's MySQL-like cloud-hosted database.  The speed comparison 
+        does inserts and queries.
     </p>
-    <p>Eventually the code will be hosted at
-    <a target="_new"  href="http://github.com">GitHub</a>.</p>
+    <h3>What does dbtest do?</h3>
+    <p>
+        After pressing the <strong>Speed Test</strong> button, a specified
+        message is entered for a certain number of iterations.
+        The user supplies both
+        the message and the number of iterations. Each entry is automatically assigned
+        a random level from 0 to 999. That process is timed for
+        both MongoHQ and Xeround.  Then a query is run for each of the levels
+        from 0 to 999.  This results in 1000 queries being run against MongoHQ
+        and another 1000 being run against Xeround.  The inserts and queries
+        are timed and the results are displayed on the results page.
+    </p>
+    <h3>Setup</h3>
+    <p>Currently, the MongoDB is hosted with the free plan from MongoHQ. The
+    Xeround account is a beta account. Both databases have an index setup
+    on level.</p>
+    <p>The code is hosted at
+    <a target="_new"  href="https://github.com/swGooF/dbtest">GitHub</a>.</p>
 
     <h2>Results</h2>
-    <p>Some results will go here. Don't wait for these results.
-    Test out the speed for yourself. </p>
+    <p>It appears that MongoHQ is much faster for inserts (by a factor of 2 or
+    3). The query speed of MongoHQ is typically about twice as fast as
+    Xeround. I am thinking the speed of MongoHQ would increase with a
+    paid plan.</p>
 
     <h2>About Ryan Swanstrom</h2>
     <p>
-        There is a lot of important stuff to go here.
+        Find out more at his <a target="_new" href="http://about.me/ryanswanstrom">About.me</a> page.
     </p>
     <h2>Special Thanks</h2>
     <ul>
-        <li><a href="http://xeround.com">Xeround</a> - For providing the
+        <li><a target="_new" href="http://xeround.com">Xeround</a> - For providing the
             MySQL-like cloud hosting</li>
         <li><a target="_new"  href="http://mongohq.com">MongoHQ</a> - For providing the MongoDB
             cloud hosting</li>
