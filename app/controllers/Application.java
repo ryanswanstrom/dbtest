@@ -14,6 +14,7 @@ import play.data.validation.Min;
 import play.data.validation.Required;
 import play.data.validation.Validation;
 import play.db.jpa.JPA;
+import play.modules.morphia.Model;
 import play.modules.morphia.utils.MorphiaFixtures;
 import play.mvc.Controller;
 import play.test.Fixtures;
@@ -40,7 +41,7 @@ public class Application extends Controller {
         render(mongoNum, xeNum, mongoMess, xeMess, tests);
     }
 
-    public static void speedTest(@Required @Min(1) @Max(10000) int iters, @MaxSize(100) String message) {
+    public static void speedTest(@Required @Min(1) @Max(2000) int iters, @MaxSize(100) String message) {
         if (Validation.hasErrors()) {
             params.flash(); // add http parameters to the flash scope
             Validation.keep(); // keep the errors for the next request
@@ -117,6 +118,7 @@ public class Application extends Controller {
     public static void deleteAll() {
         MorphiaFixtures.deleteAll();
         Fixtures.deleteAll();
+        Model.ds().ensureIndexes();
         index();
     }
 
