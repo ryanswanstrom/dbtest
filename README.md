@@ -14,3 +14,12 @@ To Run
 1. cd dbtest
 1. play secret
 1. play run
+
+To Deploy
+=====
+
+1. Update conf/application.conf with the correct values for the MySQL DB and MongoDB
+1. cd ..
+1. stax create yourproject
+1. play war ./dbtest/ -o staxdbtest --zip
+1. stax app:deploy -a username/yourproject staxdbtest.war 
