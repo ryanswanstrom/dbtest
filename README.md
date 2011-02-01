@@ -23,3 +23,4 @@ To Deploy
 1. stax create yourproject
 1. play war ./dbtest/ -o staxdbtest --zip
 1. stax app:deploy -a username/yourproject staxdbtest.war 
+1. Enjoy!
